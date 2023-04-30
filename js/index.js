@@ -20,7 +20,13 @@ window.onload = () => {
   const car = {
     image: carImage,
     x: 215
-  }
+  };
+
+  let randomX = Math.floor(Math.random() * 370) + 30;
+  let randomWidth = Math.floor(Math.random()*300)
+  let obstacles = []
+  //ctx.fillRect(randomX, 0, randomWidth, 20);
+
 
   function startGame() {
     this.intervalId = setInterval(function (){
@@ -34,12 +40,9 @@ window.onload = () => {
     if(e.code == "ArrowLeft"){
       if(car.x>30) car.x-=10;
     };
-
     if(e.code == "ArrowRight"){
       if (car.x<405) car.x+=10;
-      console.log(car.x);
     };
-    console.log(e.code);
   })
 };
 
